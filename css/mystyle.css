@@ -1,0 +1,141 @@
+
+/* 
+Задание: 2.Второй уровень
+Создайте элемент, у которго:
+ширина 350px
+высота 220px
+внутренний отступ: сверху 15px, слева 10px, внизу 20px, справа 10px
+внешний нижний отступ 30px
+"пунктирную" границу красного цвета толщиной 2px
+зеленую "заливку" элемента
+ */
+
+
+
+ .main_unit{
+   /* display: inline-block; */
+   padding: 20px 10px 0;
+   position: relative;
+   width: 600px; /* 50vw;300px; */  
+   height: 600px; 
+   background-color: #0d5825;
+   text-align: center; 
+   color: #ffffff;   
+   font-family:'Times New Roman', Times, serif;
+   font-size:  25px;
+ }
+
+
+ .card{
+   width: 150px;  
+   position: relative;
+   margin-right: auto; 
+   margin-top: auto; 
+   display: inline-block;
+   top: 100px;
+ }
+
+.s1{
+   right: -100px;
+   transform: rotate(-17deg);
+   z-index: 1;
+}
+
+.s2{
+   transform: rotate(0deg);
+   z-index: 2;
+}
+
+.s3{
+   left: -100px;
+   transform: rotate(17deg);
+   z-index: 3;
+}
+
+/* Действие при наведении */
+
+.s1:hover {
+   transition: 1s;
+   transform:  rotate(-15deg) translateY(-50px);
+   /* margin-bottom: -50px; */
+ }
+
+ .s2:hover {
+   transition: 1s;
+   transform: rotate(0deg) translateY(-50px);
+   /* margin-bottom: -50px; */
+ }
+
+ .s3:hover {
+   transition: 1s;
+   transform: rotate(15deg) translateY(-50px);
+   /* margin-bottom: -50px; */
+ }
+
+/* Вторая задача */
+
+.holder {
+   position: relative;
+   width: 300px;
+	height: 300px;
+}
+ .quadrate {
+   position: relative; 
+   width: 100px;
+	height: 100px;
+}
+
+.q1{
+   background: #ff8888;  
+   z-index: 1; 
+}
+
+.q2{
+   margin-top: -40px;
+   margin-left: -40px;
+   right: -100px;
+   background: #7e8aeb;  
+   z-index: 2; 
+}
+
+.q3{
+   margin-top: -40px;
+   margin-left: -80px;
+   right: -200px;
+   background: #4def99;  
+   z-index: 1; 
+}
+
+
+/* четвертая задача */
+.holder_4{
+   width:  400px;
+	height: 400px;
+	overflow: hidden;
+}
+
+/* признаюсь, содрал и переделал под ДЗ 4*/
+@keyframes anim1{
+
+   0%{margin-left:0px; margin-top: 0px}
+	25%{margin-left:0px; margin-top: 300px}
+	50%{margin-left:300px; margin-top: 300px}
+	75%{margin-left:300px; margin-top: 0px}
+	100%{margin-left:0px; margin-top: 0px}  
+
+}
+@keyframes anim2{
+	0%{background: red;}
+   25%{background: blue;}
+	50%{background: green;}
+   75%{background: yellow;}
+	100%{background: red;}
+}
+
+#d1{
+
+   width: 100px;
+   height: 100px;
+	-webkit-animation: anim1 4s linear infinite, anim2 4s linear infinite;
+	animation: anim1 4s linear infinite, anim2 4s linear infinite;
+}
